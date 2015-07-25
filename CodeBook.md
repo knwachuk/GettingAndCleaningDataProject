@@ -7,10 +7,9 @@ or work that was performed to clean up the data.</p>
 
 ## Variables
 
-For this project, the variables have been differentiated under two major cate-
-gories:
+For this project, the variables have been differentiated under two major categories:
 1. "Basic" variables - variables from the original data creators.
-2. "Added" variables - variables from the transformative processing.
+2. "Added" variables - variables from the transformation processing.
 
 ### "Basic" variables
 <p>These are the variables that are inherent in the raw data. They are included in
@@ -33,8 +32,8 @@ which adequately explains both the 561 feature vector variables, as well as the
 Inertial signals.</p>
 
 ### "Added"" variables
-<p>These are variables that were added during the transformative steps in order to
-preserve the intergrity (and information) of the raw data sets. There is only
+<p>These are variables that were added during the transformation steps in order to
+preserve the integrity (and information) of the raw data sets. There is only
 one such variable; Set.</p>
 
 #### Set
@@ -71,14 +70,14 @@ raw unprocessed (and messy) state to the finished tidy state is as follows:</p>
 1. Load the dplyr and tidyr libraries.
 2. Read the data (test case and train case) into R objects.
 3. Label (manually) the Subject and Activity variables
-4. Remove "()" and "-" from the labeling of the 561 feature vector. This step
+4. Remove "()" and "-" from the labelling of the 561 feature vector. This step
    cleans the variables name, making them easier to access in the future.
 5. Label the 561 feature variable.
 6. Column bind the Subject, Activity, and Set vectors.
 7. Column bind with the respective 561 feature vectors for two sets of data
    resulting in a 7352 by 564 vector for training case and a 2947 by 564 vector
    for test case.
-8. Rbind the test case, TEST, and train caes, TRAIN, data sets to create a
+8. Rbind the test case, TEST, and train case, TRAIN, data sets to create a
    single data set, DATA.
 9. Update the Activity variable from numeric value to descriptive "factors".
 10. Removing duplicate columns from the data set. This step aids the functioning
@@ -90,3 +89,11 @@ raw unprocessed (and messy) state to the finished tidy state is as follows:</p>
     Subject and Activity.
 14. Write tidy data set to avgDATA.txt file.
 15. Remove all the other created objects in the Global Environment
+
+## avgDATA
+
+From 12 and 13 of *Transformatiion Flow*, the mean of the "mean" and "std" grouped
+by the Subject and the Activity was calculated. This information measures the 
+central tendency of the accelerometer and gyroscope in the device for that
+particular uses in that particular activity. The units of measurement for all
+variables is Hz or (1/s).

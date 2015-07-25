@@ -4,7 +4,9 @@
 
 <p>This is a simple introduction to the contents of the repo. In order to 
 fully understand the data, it needs to be used in conjunction with the information
-provided with the data, as well as the CodeBook.md file.</p>
+provided with the data, as well as the CodeBook.md file. Finally, there is a
+data dictionary, DataDicitoinary.txt, for the DATA object that explains in more
+detail the variables and their units.</p>
 
 ## About the Repo
 
