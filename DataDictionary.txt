@@ -1,13 +1,18 @@
 # Getting And Cleaning Data Course Project - DataDictionary.md
 
-Data dictionary for R object DATA.
+Data dictionary for R object DATA. The Data dictionary for R object avgDATA is a
+subset of this one, hence there is no need to repeat the information.
+
+The main difference is the fact that variable "Activity" replaces the numeric
+values with their character counterpart. For example, an observation of 1 becomes
+an observation of WALKING.
 
 Subject, 1 or 2:
     Participant of the observations
         1..30 .Unique identifier assigned to participants
 
 Activity, 1:
-    Identifier used to differentiate activities
+    Identifier used to differentiate the experimental activities
         1 .WALKING
         2 .WALKING_UPSTAIRS
         3 .WALKING_DOWNSTAIRS
@@ -20,10 +25,57 @@ Set, character vector:
         TRAIN .Identifier for training case
         TEST  .Identifier for test case
 
-561 Features (from column 4:564), 1 - 3:
-    Data from accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ.
-    (prefix "t" represents time) captured at a constant rate of 50Hz
-    (prefix "f" represents frequency)
+561 Features Deconstruction (from column 4:564), character vector:
+    (prefix "t" represents time domain signals) captured at a constant rate of 50Hz
+    (prefix "f" represents frequency domain signals) applying a Fast Fourier Transform (FFT)
+        -1..1 .Variables value bounded (normalized) between -1 and 1.
+
+    Data from accelerometer and gyroscope 3-axial raw signals, tAcc-XYZ and tGyro-XYZ.
+        tBodyAcc-XYZ
+        tGravityAcc-XYZ
+        tBodyAccJerk-XYZ
+        tBodyGyro-XYZ
+        tBodyGyroJerk-XYZ
+        tBodyAccMag
+        tGravityAccMag
+        tBodyAccJerkMag
+        tBodyGyroMag
+        tBodyGyroJerkMag
+        fBodyAcc-XYZ
+        fBodyAccJerk-XYZ
+        fBodyGyro-XYZ
+        fBodyAccMag
+        fBodyAccJerkMag
+        fBodyGyroMag
+        fBodyGyroJerkMag
+
+    The set of variables that were estimated from the raw signals are:
+        mean(): Mean value
+        std(): Standard deviation
+        mad(): Median absolute deviation
+        max(): Largest value in array
+        min(): Smallest value in array
+        sma(): Signal magnitude area
+        energy(): Energy measure. Sum of the squares divided by the number of values.
+        iqr(): Interquartile range
+        entropy(): Signal entropy
+        arCoeff(): Autoregresion coefficients with Burg order equal to 4
+        correlation(): correlation coefficient between two signals
+        maxInds(): index of the frequency component with largest magnitude
+        meanFreq(): Weighted average of the frequency components to obtain a mean frequency
+        skewness(): skewness of the frequency domain signal
+        kurtosis(): kurtosis of the frequency domain signal
+        bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
+        angle(): Angle between to vectors.
+
+    Additional vectors obtained by averaging the signals in a signal window sample:
+        gravityMean
+        tBodyAccMean
+        tBodyAccJerkMean
+        tBodyGyroMean
+        tBodyGyroJerkMean
+
+    561 feature variables, arranged by column location:
         1 .tBodyAcc-mean()-X
         2 .tBodyAcc-mean()-Y
         3 .tBodyAcc-mean()-Z
